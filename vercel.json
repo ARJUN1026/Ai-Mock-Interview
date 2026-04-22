@@ -1,21 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server/package.json",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "server/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "server/server.js"
-    }
-  ],
+  "buildCommand": "cd client && npm install && npm run build && cd ../server && npm install",
+  "outputDirectory": "server",
   "env": {
     "NODE_ENV": "production"
   }
